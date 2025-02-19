@@ -32,3 +32,4 @@ dist-ssr
 
 # Ignorar toda la carpeta public/
 public/
+public/imagenes/Videos/*.mp4
