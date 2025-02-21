@@ -27,18 +27,22 @@ const Eventos = () => {
 
   return (
    
-    <div>
-        {eventosData.map((evento) => 
-        <div key={evento.id}>
-            <h1>{evento.date}</h1>
-            <h1>{evento.startTime}</h1>
-            <h1>{evento.endTime}</h1>
-            <h1>{evento.description}</h1>
-            <h1>{evento.name}</h1>
-            <h1>{evento.hotel.name}</h1>
-            <h2>price for non customers: {evento.price}</h2>
+    <div className="container  mx-auto my-10 p-5">
+      <h1 className="text-4xl text-center mb-10">Nuestros eventos confirmados para el año 2025</h1>
+      <div className=" md:grid grid-cols-4 gap-5">
+      {eventosData.map((evento) => 
+        <div key={evento.id} className="p-3 mb-5 flex flex-col gap-1 bg-white bg-opacity-50 shadow-md rounded-lg" >
+          <h1 className="text-center text-primary text-3xl ">{evento.name}</h1>
+            <h2 className="text-3xl mb-5 text-center">{evento.date}</h2>
+            <h2 className="mb-1">- De: <strong>{evento.startTime}</strong> a : <strong>{evento.endTime}</strong></h2>
+            <h2 className="mb-1">- {evento.description}</h2>
+            
+            <h2 className="mb-1">- 📍 {evento.hotel.name}</h2>
+            <h2>- Precio para no huespedes: <strong>{evento.price}$</strong></h2>
         </div>
         )}
+      </div>
+        
     </div>
   )
 }
